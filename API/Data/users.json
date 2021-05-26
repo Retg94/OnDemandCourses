@@ -1,0 +1,30 @@
+[
+  {
+    "FirstName": "Richard",
+    "LastName": "Gustavsson",
+    "Email": "retg94@gmail.com",
+    "Phone": "073123123",
+    "Address": "Gatan 123"
+  },
+  {
+    "FirstName": "Erik",
+    "LastName": "Svensson",
+    "Email": "erik@gmail.com",
+    "Phone": "073111111",
+    "Address": "Vägen 123"
+  },
+  {
+    "FirstName": "Ludvig",
+    "LastName": "Eriksson",
+    "Email": "ludde@gmail.com",
+    "Phone": "07999999",
+    "Address": "Avenyn 99"
+  },
+  {
+    "FirstName": "Per",
+    "LastName": "Håkansson",
+    "Email": "perra@gmail.com",
+    "Phone": "073555555",
+    "Address": "Skånegatan 1"
+  }
+]

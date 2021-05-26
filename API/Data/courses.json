@@ -1,0 +1,32 @@
+[
+  {
+    "CourseName": "Grundläggande matematik",
+    "CourseNumber": 3141,
+    "Retired": false
+  },
+  {
+    "CourseName": "Grundläggande Engelska",
+    "CourseNumber": 1111,
+    "Retired": false
+  },
+  {
+    "CourseName": "Idrott och hälsa",
+    "CourseNumber": 2222,
+    "Retired": false
+  },
+  {
+    "CourseName": "Allt om grekiska gudar",
+    "CourseNumber": 3333,
+    "Retired": true
+  },
+  {
+    "CourseName": "Grundläggande programmering",
+    "CourseNumber": 4444,
+    "Retired": false
+  },
+  {
+    "CourseName": "Fiskesport",
+    "CourseNumber": 5555,
+    "Retired": true
+  }
+]
