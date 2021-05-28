@@ -31,9 +31,29 @@ namespace API.Controllers
             return Ok(await _unitOfWork.CourseRepository.GetCourseByIdAsync(id));
         }
 
+        [HttpGet("coursenumber/{coursenumber}")]
+        public async Task<ActionResult<Course>> GetCourseByCourseNumber(int coursenumber){
+            // if(await _unitOfWork.CourseRepository.GetCourseByCourseNumberAsync(coursenumber) == null){
+            //     return StatusCode(400, "Gick inte att hitta en kurs med kursnummer {coursenumber}");
+            // }
+            try{
+                //return Ok(await _unitOfWork.CourseRepository.GetCourseByCourseNumberAsync(coursenumber));
+                var result = await _unitOfWork.CourseRepository.GetCourseByCourseNumberAsync(coursenumber);
+                return StatusCode(200, result);
+            }
+            catch(Exception ex){
+                return StatusCode(500, ex.Message);
+            }
+        }
+
         [HttpGet("search/{query}")]
         public async Task<ActionResult<IEnumerable<Course>>> GetCoursesByQuery(string query){
             return Ok(await _unitOfWork.CourseRepository.GetCoursesByPartAsync(query));
+        }
+
+        [HttpGet("teapot")]
+        public StatusCodeResult GetTeapot(){
+            return StatusCode(418);
         }
 
         [HttpPost()]
@@ -47,6 +67,7 @@ namespace API.Controllers
             return StatusCode(500, "Gick inte att spara kursen");
         }
 
+        //Kan uppdatera och pensionera
         [HttpPatch("{id}")]
         public async Task<ActionResult> UpdateCourse (int id, CourseViewModel updatedCourse){
 
@@ -55,6 +76,7 @@ namespace API.Controllers
 
             return StatusCode(500, "Det gick inte att uppdatera kursen");
         }
+
 
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteCourse(int id){

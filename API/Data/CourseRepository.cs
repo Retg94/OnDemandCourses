@@ -32,6 +32,11 @@ namespace API.Data
             _context.Entry(course).State = EntityState.Deleted;
         }
 
+        public async Task<Course> GetCourseByCourseNumberAsync(int coursenumber)
+        {
+            return await _context.Courses.SingleOrDefaultAsync(c => c.CourseNumber == coursenumber);
+        }
+
         public async Task<Course> GetCourseByIdAsync(int id)
         {
             return await _context.Courses.SingleOrDefaultAsync(c => c.Id == id);
@@ -49,6 +54,7 @@ namespace API.Data
             return matches;
         }
 
+
         public async Task<bool> SaveAllAsync()
         {
             return await _context.SaveChangesAsync() > 0;
@@ -60,5 +66,6 @@ namespace API.Data
             course.Id = id;
             _context.Entry(course).State = EntityState.Modified;
         }
+
     }
 }
